@@ -1,0 +1,15 @@
+<div class="scoreboard">
+  <h3>Scoreboard</h3>
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Navn</th>
+      <th>Score</th>
+    </tr>
+    <tr *ngFor="let score of scoreBoard$ | async; index as i">
+      <td>{{i + 1}}</td>
+      <td>{{score.user}}</td>
+      <td>{{score.score}}</td>
+    </tr>
+  </table>
+</div>

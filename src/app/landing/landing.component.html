@@ -1,34 +1,49 @@
 <div class="landing">
-    <div class="stamp is-draft">
-        KBH EDITION
+  <div class="stamp is-draft">
+    TMF EDITION
+  </div>
+  <div class="intro">
+    <h2>Velkommen til <span>TMF Geoquiz</span></h2>
+    <p>Hvor godt kender du København?</p>
+    <p>
+      Bestem placeringen af {{questionsNum}} steder. Kan du slå dine
+      TMF-buddies?
+    </p>
+  </div>
+  <div class="name">
+    <mat-form-field class="input-name"
+                    appearance="fill">
+      <mat-label>Skriv dit navn</mat-label>
+      <input [(ngModel)]="name"
+             matInput>
+    </mat-form-field>
+  </div>
+  <div class="categories">
+    <div *ngFor="let cat of categories">
+      <button mat-raised-button
+              (click)="selected(cat.id)"
+              [disabled]="name===''">
+        {{cat.name}}
+      </button>
     </div>
-    <div class="intro">
-        <h2>Velkommen til <span>Geoquiz</span></h2>
-        <p>Hvor godt kender du dødsruterne i København?</p>
-        <p>
-            Her er den ultimative geoquiz, hvor du skal bestemme placeringen af {{questionsNum}} steder. Kan du slå dine
-            drinking buddies i en af kategorierne?
-        </p>
-    </div>
-    <div class="categories">
-        <div *ngFor="let cat of categories">
-            <button mat-raised-button (click)="selected(cat.id)">
-                <!-- <mat-icon>{{cat.icon}}</mat-icon> -->
-                {{cat.name}}
-            </button>
-        </div>
 
-    </div>
-    <div class="help">
+  </div>
+
+  <app-scoreboard [scoreBoard$]="scoreBoard$"></app-scoreboard>
+
+  <!-- <div class="help">
         <p>
             <span><strong>Sådan gør du:</strong></span><br> Sæt en markør på kortet og klik derefter GÆT
         </p>
-    </div>
-    <div class="attribution">
-        <p>
-            Kilder:
-            <a href="https://www.openstreetmap.org" target="_blank">Open Street Map</a>
-            og <a href="https://github.com/baffioso/geoquiz-kbh" target="_blank" rel="noopener noreferrer">Github</a>
-        </p>
-    </div>
+    </div> -->
+  <div class="attribution">
+    <p>
+      Kilder:
+      <a href="https://www.openstreetmap.org"
+         target="_blank">Open Street Map</a>
+      og <a href="https://github.com/kkpuma/geoquiz-kbh"
+         target="_blank"
+         rel="noopener noreferrer">Github</a>
+    </p>
+  </div>
 </div>

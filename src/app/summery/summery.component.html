@@ -2,6 +2,8 @@
     <div class="item">
         <h1>Du gættede <span>{{distance}}</span> km forkert</h1>
         <br><br>
+        <app-scoreboard [scoreBoard$]="scoreBoard$"></app-scoreboard>
+        <br><br>
         <button mat-flat-button (click)="playAgain()">PRØV IGEN</button>
     </div>
 </div>

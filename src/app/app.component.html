@@ -1,22 +1,41 @@
-<app-landing *ngIf="showLanding" [categories]="categories" [questionsNum]="questionNum"
-    (selectCategory)="selectCategory($event)"></app-landing>
-<app-loading *ngIf="showLoading" [data]="loadingData"></app-loading>
-<button mat-icon-button class="back" *ngIf="!showLanding" (click)="playAgain()">
-    <mat-icon>chevron_left</mat-icon>
+<app-landing *ngIf="showLanding"
+             [categories]="categories"
+             [questionsNum]="questionNum"
+             [scoreBoard$]="scoreBoard$"
+             (userName)="onUserNameChanged($event)"
+             (selectCategory)="selectCategory($event)"></app-landing>
+<app-loading *ngIf="showLoading"
+             [data]="loadingData"></app-loading>
+<button mat-icon-button
+        class="back"
+        *ngIf="!showLanding"
+        (click)="playAgain()">
+  <mat-icon>chevron_left</mat-icon>
 </button>
-<div *ngIf="!showLanding && !showLoading && !showSummery" class="question">
-    <p class="count">{{index+1}}/{{questionNum}}</p>
-    <h1 *ngIf="index < questionNum">
-        Hvor ligger <span class="location">{{randomLocations[index].properties.name}}</span>?
-    </h1>
+<div *ngIf="!showLanding && !showLoading && !showSummery"
+     class="question">
+  <p class="count">{{index+1}}/{{questionNum}}</p>
+  <h1 *ngIf="index < questionNum">
+    Hvor ligger <span class="location">{{randomLocations[index].properties.name}}</span>?
+  </h1>
 </div>
-<div *ngIf="!showLanding && !showLoading && !showSummery" class="btn">
-    <button *ngIf="index < questionNum" mat-raised-button (click)="onClick()">
-        <h2>{{buttonGuess ? 'Gæt' : 'Næste'}}</h2>
-    </button>
-    <button *ngIf="index >= questionNum" mat-raised-button (click)="handleSummery()">
-        <h2>se resultat</h2>
-    </button>
+<div *ngIf="!showLanding && !showLoading && !showSummery"
+     class="btn">
+  <p class="help"
+     *ngIf="!addedMarker">Tryk på kortet for at sætte markør</p>
+  <button *ngIf="index < questionNum && addedMarker"
+          mat-raised-button
+          (click)="onClick()">
+    <h2>{{buttonGuess ? 'gæt' : 'næste'}}</h2>
+  </button>
+  <button *ngIf="index >= questionNum"
+          mat-raised-button
+          (click)="handleSummery()">
+    <h2>se resultat</h2>
+  </button>
 </div>
-<app-summery *ngIf="showSummery" [distance]="totalDistance" (replay)="playAgain()"></app-summery>
+<app-summery *ngIf="showSummery"
+             [distance]="totalDistance"
+             [scoreBoard$]="scoreBoard$"
+             (replay)="playAgain()"></app-summery>
 <app-map></app-map>

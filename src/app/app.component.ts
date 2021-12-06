@@ -6,162 +6,190 @@ import { bar } from '../assets/bar';
 import { kebab } from '../assets/kebab';
 import { club } from '../assets/club';
 import { Loading, Category } from './interfaces';
+import { filter, switchMap, tap } from 'rxjs/operators';
+import { SupabaseService } from './services/supabase.service';
+import { MatSnackBar } from '@angular/material';
+import { environment } from 'src/environments/environment';
+import { tmf } from 'src/assets/tmf';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-    title = 'geoquiz';
-    showLanding = true;
-    showLoading = false;
-    showSummery = false;
-    randomLocations: Feature[];
-    index = 0;
-    buttonGuess = true;
-    distance: number[] = [];
-    totalDistance: number;
-    features: any;
-    questionNum = 10;
-    categories = [
-        { name: 'Bar', id: 'bar', icon: 'museum' },
-        { name: 'Natklub', id: 'club', icon: 'museum' },
-        { name: 'Kebab', id: 'kebab', icon: 'museum' },
+  title = 'geoquiz';
+  showLanding = true;
+  showLoading = false;
+  showSummery = false;
+  userName: string;
+  randomLocations: Feature[];
+  index = 0;
+  buttonGuess = true;
+  distance: number[] = [];
+  totalDistance: number;
+  features: any;
+  questionNum = 10;
+  categories = [
+    { name: 'START QUIZ', id: 'tmf', icon: 'museum' },
+  ];
+  selectedCategory: string;
+  loadingData: Loading;
+  addedMarker = false;
+  scoreBoard$ = this.supabase.scoreBoard$;
+  answerId: string;
 
-    ];
-    selectedCategory: string;
-    loadingData: Loading;
+  constructor(
+    private mapService: MapService,
+    private supabase: SupabaseService,
+    private snackBar: MatSnackBar
+  ) { }
 
-    constructor(private mapService: MapService) { }
+  ngOnInit(): void {
+    this.supabase.fetchScoreboard().pipe(
+      tap(console.log)
+    ).subscribe();
 
-    ngOnInit(): void {
+    this.supabase.subscribeLiveScoreUpdate();
+    this.supabase.liveScoreUpdate$.pipe(
+      filter(score => score !== null),
+      tap(score => this.snackBar.open(`${score.user} scored ${score.score} points!`, '', {
+        duration: 2000,
+        horizontalPosition: 'end',
+        verticalPosition: 'top',
+      })
+      )
+    ).subscribe();
+
+    this.mapService.addedMarker.subscribe(e => this.addedMarker = e);
+
+  }
+
+
+  onClick() {
+    if (this.index < this.questionNum) {
+      this.buttonGuess ? this.answer() : this.nextQuestion();
+    } else {
+      this.handleSummery();
+    }
+  }
+
+  onUserNameChanged(name: string) {
+    this.userName = name;
+  }
+
+  selectCategory(id: string) {
+    this.showLanding = false;
+    this.showLoading = true;
+
+    // remove loading after 2 sec
+    setTimeout(() => {
+      this.showLoading = false;
+    }, 2000);
+
+    this.features = tmf.features;
+    this.selectedCategory = id;
+
+    this.loadingData = {
+      category: this.getCategoryFromId(id).name,
+      questionNum: this.questionNum,
+      featureCount: this.features.length
+    };
+
+    this.randomLocations = this.mapService.getRandomLocations(this.features, this.questionNum);
+
+  }
+
+  answer() {
+
+    // Get guess and answer coords
+    const feature = this.randomLocations[this.index];
+    const guessCoords = [this.mapService.currentLocation['lng'], this.mapService.currentLocation['lat']] as [number, number];
+    const answerCoords = feature.geometry['coordinates'] as [number, number];
+
+    // draw line on map and calculate distance
+    const line = this.mapService.createLine(guessCoords, answerCoords);
+    const dist = this.mapService.getDistance(guessCoords, answerCoords);
+    this.distance.push(dist);
+    this.mapService.addLineToMap(line, dist);
+    this.mapService.zoomTo(line);
+
+    // Add popup
+    const name = feature.properties.name;
+    const wd = feature.properties.wikidata;
+    const wp = feature.properties.wikipedia;
+
+    // Logic for popup html choos
+    let html: string;
+    if (wp && wp.length > 0) {
+      const wps = wp.split(':');
+      // tslint:disable-next-line:max-line-length
+      html = `<h3>${name}</h3><a href=https://${wps[0]}.wikipedia.org/wiki/${wps[1].split(' ').join('_')} target="_blank">Wikipedia</a>`;
+    } else if (wd) {
+      html = `<h3>${name}</h3><a href=https://www.wikidata.org/wiki/${wd} target="_blank">Wikidata</a>`;
+    } else {
+      html = `<h3>${name}</h3>`;
     }
 
-    onClick() {
-        if (this.index < this.questionNum) {
-            this.buttonGuess ? this.answer() : this.nextQuestion();
-        } else {
-            this.handleSummery();
-        }
+    this.mapService.addPopup(answerCoords, html);
+
+    this.buttonGuess = false;
+
+    if (this.index === this.questionNum - 1) {
+      this.index = ++this.index;
     }
+  }
 
-    selectCategory(id: string) {
-        this.showLanding = false;
-        this.showLoading = true;
+  nextQuestion() {
 
-        // remove loading after 2 sec
-        setTimeout(() => {
-            this.showLoading = false;
-        }, 2000);
+    // Remove markers and line
+    this.mapService.marker.remove();
+    this.mapService.popup.remove();
+    this.mapService.removeLine();
 
-        console.log(this.getCategoryFromId(id));
+    // Zoom to dk
+    this.mapService.flyToDK();
 
-        switch (id) {
-            case 'bar':
-                this.features = bar.features;
-                this.selectedCategory = id;
-                break;
-            case 'kebab':
-                this.features = kebab.features;
-                this.selectedCategory = id;
-                break;
-            case 'club':
-                this.features = club.features;
-                this.selectedCategory = id;
-                break;
-            default:
-                break;
-        }
+    this.buttonGuess = true;
 
-        this.loadingData = {
-            category: this.getCategoryFromId(id).name,
-            questionNum: this.questionNum,
-            featureCount: this.features.length
-        };
+    this.index = ++this.index;
+  }
 
-        this.randomLocations = this.mapService.getRandomLocations(this.features, this.questionNum);
+  handleSummery() {
+    this.showSummery = true;
+    this.totalDistance = Math.round(this.distance.reduce((acc, cur) => acc + cur));
+    this.supabase.postScore(
+      {
+        quiz_name: environment.quizName,
+        score: this.totalDistance,
+        user: this.userName
+      }
+    ).pipe(
+      switchMap(
+        () => this.supabase.fetchScoreboard()
+      )
+    ).subscribe();
 
-    }
+  }
 
-    answer() {
+  playAgain() {
+    this.index = 0;
+    this.distance = [];
 
-        // Get guess and answer coords
-        const feature = this.randomLocations[this.index];
-        const guessCoords = [this.mapService.currentLocation['lng'], this.mapService.currentLocation['lat']] as [number, number];
-        const answerCoords = feature.geometry['coordinates'] as [number, number];
+    // Remove popup, marker and line
+    this.mapService.marker.remove();
+    this.mapService.popup.remove();
+    this.mapService.removeLine();
+    this.mapService.currentLocation = null;
+    this.mapService.flyToDK();
 
-        // draw line on map and calculate distance
-        const line = this.mapService.createLine(guessCoords, answerCoords);
-        const dist = this.mapService.getDistance(guessCoords, answerCoords);
-        this.distance.push(dist);
-        this.mapService.addLineToMap(line, dist);
-        this.mapService.zoomTo(line);
+    this.buttonGuess = true;
+    this.showSummery = false;
+    this.showLanding = true;
+  }
 
-        // Add popup
-        const name = feature.properties.name;
-        const wd = feature.properties.wikidata;
-        const wp = feature.properties.wikipedia;
-
-        // Logic for popup html choos
-        let html: string;
-        if (wp && wp.length > 0) {
-            const wps = wp.split(':');
-            // tslint:disable-next-line:max-line-length
-            html = `<h3>${name}</h3><a href=https://${wps[0]}.wikipedia.org/wiki/${wps[1].split(' ').join('_')} target="_blank">Wikipedia</a>`;
-        } else if (wd) {
-            html = `<h3>${name}</h3><a href=https://www.wikidata.org/wiki/${wd} target="_blank">Wikidata</a>`;
-        } else {
-            html = `<h3>${name}</h3>`;
-        }
-
-        this.mapService.addPopup(answerCoords, html);
-
-        this.buttonGuess = false;
-
-        if (this.index === this.questionNum - 1) {
-            this.index = ++this.index;
-        }
-    }
-
-    nextQuestion() {
-
-        // Remove markers and line
-        this.mapService.marker.remove();
-        this.mapService.popup.remove();
-        this.mapService.removeLine();
-
-        // Zoom to dk
-        this.mapService.flyToDK();
-
-        this.buttonGuess = true;
-
-        this.index = ++this.index;
-    }
-
-    handleSummery() {
-        this.showSummery = true;
-        this.totalDistance = Math.round(this.distance.reduce((acc, cur) => acc + cur));
-    }
-
-    playAgain() {
-        this.index = 0;
-        this.distance = [];
-
-        // Remove popup, marker and line
-        this.mapService.marker.remove();
-        this.mapService.popup.remove();
-        this.mapService.removeLine();
-        this.mapService.currentLocation = null;
-        this.mapService.flyToDK();
-
-        this.buttonGuess = true;
-        this.showSummery = false;
-        this.showLanding = true;
-    }
-
-    getCategoryFromId(id: string): Category {
-        return this.categories.find(x => x.id === id);
-    }
+  getCategoryFromId(id: string): Category {
+    return this.categories.find(x => x.id === id);
+  }
 
 }

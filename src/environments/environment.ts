@@ -6,6 +6,9 @@ export const environment = {
   production: false,
   mapboxToken:
     'pk.eyJ1IjoiYmFmZmlvc28iLCJhIjoiT1JTS1lIMCJ9.f5ubY91Bi42yPnTrgiq-Gw',
+  supabaseUrl: 'https://gwkpwfeokmoiieserdzv.supabase.co',
+  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzODM5NTU2MywiZXhwIjoxOTUzOTcxNTYzfQ.TQTQVltISuOMjNzWYLppIglvLgAHOpsDqpZyB9SS3uM',
+  quizName: 'KK Quiz',
 };
 
 /*

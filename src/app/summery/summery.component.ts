@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Score } from '../interfaces';
 
 @Component({
   selector: 'app-summery',
@@ -8,6 +10,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class SummeryComponent implements OnInit {
   @Input() distance: number;
   @Output() replay = new EventEmitter();
+  @Input() scoreBoard$: Observable<Score[]>;
 
   constructor() { }
 
