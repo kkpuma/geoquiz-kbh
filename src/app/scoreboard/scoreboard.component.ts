@@ -9,6 +9,7 @@ import { Score } from '../interfaces';
 })
 export class ScoreboardComponent implements OnInit {
   @Input() scoreBoard$: Observable<Score[]>;
+  @Input() currentUserId: string;
 
   constructor() { }
 

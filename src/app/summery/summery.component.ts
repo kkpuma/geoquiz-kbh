@@ -9,6 +9,7 @@ import { Score } from '../interfaces';
 })
 export class SummeryComponent implements OnInit {
   @Input() distance: number;
+  @Input() currentUserId: string;
   @Output() replay = new EventEmitter();
   @Input() scoreBoard$: Observable<Score[]>;
 

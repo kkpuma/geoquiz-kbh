@@ -39,5 +39,6 @@
 <app-summery *ngIf="showSummery"
              [distance]="totalDistance"
              [scoreBoard$]="scoreBoard$"
+             [currentUserId]="currentUserId"
              (replay)="playAgain()"></app-summery>
 <app-map></app-map>

@@ -12,7 +12,8 @@
     margin: auto;
     text-align: center;
 
-    td, th {
+    td,
+    th {
       padding: 0 10px;
     }
 
@@ -20,4 +21,33 @@
       padding-bottom: 8px;
     }
   }
+}
+
+@-o-keyframes fadeIt {
+  0% {
+    background-color: #2b2b2b;
+  }
+  50% {
+    background-color: #13e4c1;
+  }
+  100% {
+    background-color: #2b2b2b;
+  }
+}
+@keyframes fadeIt {
+  0% {
+    background-color: #2b2b2b;
+  }
+  50% {
+    background-color: #13e4c1;
+  }
+  100% {
+    background-color: #2b2b2b;
+  }
+}
+
+.highlight {
+  background-image: none !important;
+  -o-animation: fadeIt 1s ease-in-out;
+  animation: fadeIt 10s ease-in-out;
 }

@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   distance: number[] = [];
   totalDistance: number;
   features: any;
-  questionNum = 10;
+  questionNum = 1;
   categories = [
     { name: 'START QUIZ', id: 'tmf', icon: 'museum' },
   ];
@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
   addedMarker = false;
   scoreBoard$ = this.supabase.scoreBoard$;
   answerId: string;
+  currentUserId: string;
 
   constructor(
     private mapService: MapService,
@@ -44,7 +45,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.supabase.fetchScoreboard().pipe(
-      tap(console.log)
     ).subscribe();
 
     this.supabase.subscribeLiveScoreUpdate();
@@ -172,6 +172,7 @@ export class AppComponent implements OnInit {
         user: this.userName
       }
     ).pipe(
+      tap(score => this.currentUserId = score[0].id),
       switchMap(
         () => this.supabase.fetchScoreboard()
       )
