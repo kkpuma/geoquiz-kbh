@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Feature } from 'geojson';
-
+import confetti from 'canvas-confetti';
 import { MapService } from './map/map.service';
-import { bar } from '../assets/bar';
-import { kebab } from '../assets/kebab';
-import { club } from '../assets/club';
 import { Loading, Category } from './interfaces';
 import { filter, switchMap, tap } from 'rxjs/operators';
 import { SupabaseService } from './services/supabase.service';
@@ -72,6 +69,10 @@ export class AppComponent implements OnInit {
     } else {
       this.handleSummery();
     }
+  }
+
+  secretConfetti() {
+    confetti();
   }
 
   onUserNameChanged(name: string) {

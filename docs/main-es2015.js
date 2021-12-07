@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-landing *ngIf=\"showLanding\"\n             [categories]=\"categories\"\n             [questionsNum]=\"questionNum\"\n             [scoreBoard$]=\"scoreBoard$\"\n             (userName)=\"onUserNameChanged($event)\"\n             (selectCategory)=\"selectCategory($event)\"></app-landing>\n<app-loading *ngIf=\"showLoading\"\n             [data]=\"loadingData\"></app-loading>\n<button mat-icon-button\n        class=\"back\"\n        *ngIf=\"!showLanding\"\n        (click)=\"playAgain()\">\n  <mat-icon>chevron_left</mat-icon>\n</button>\n<div *ngIf=\"!showLanding && !showLoading && !showSummery\"\n     class=\"question\">\n  <p class=\"count\">{{index+1}}/{{questionNum}}</p>\n  <h1 *ngIf=\"index < questionNum\">\n    Hvor ligger <span class=\"location\">{{randomLocations[index].properties.name}}</span>?\n  </h1>\n</div>\n<div *ngIf=\"!showLanding && !showLoading && !showSummery\"\n     class=\"btn\">\n  <p class=\"help\"\n     *ngIf=\"!addedMarker\">Tryk på kortet for at sætte markør</p>\n  <button *ngIf=\"index < questionNum && addedMarker\"\n          mat-raised-button\n          (click)=\"onClick()\">\n    <h2>{{buttonGuess ? 'gæt' : 'næste'}}</h2>\n  </button>\n  <button *ngIf=\"index >= questionNum\"\n          mat-raised-button\n          (click)=\"handleSummery()\">\n    <h2>se resultat</h2>\n  </button>\n</div>\n<app-summery *ngIf=\"showSummery\"\n             [distance]=\"totalDistance\"\n             [scoreBoard$]=\"scoreBoard$\"\n             (replay)=\"playAgain()\"></app-summery>\n<app-map></app-map>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-landing *ngIf=\"showLanding\"\n             [categories]=\"categories\"\n             [questionsNum]=\"questionNum\"\n             [scoreBoard$]=\"scoreBoard$\"\n             (userName)=\"onUserNameChanged($event)\"\n             (selectCategory)=\"selectCategory($event)\"></app-landing>\n<app-loading *ngIf=\"showLoading\"\n             [data]=\"loadingData\"></app-loading>\n<button mat-icon-button\n        class=\"back\"\n        *ngIf=\"!showLanding\"\n        (click)=\"playAgain()\">\n  <mat-icon>chevron_left</mat-icon>\n</button>\n<div *ngIf=\"!showLanding && !showLoading && !showSummery\"\n     class=\"question\">\n  <p class=\"count\">{{index+1}}/{{questionNum}}</p>\n  <h1 *ngIf=\"index < questionNum\">\n    Hvor ligger <span class=\"location\">{{randomLocations[index].properties.name}}</span>?\n  </h1>\n</div>\n<div *ngIf=\"!showLanding && !showLoading && !showSummery\"\n     class=\"btn\">\n  <p class=\"help\"\n     *ngIf=\"!addedMarker\">Tryk på kortet for at sætte markør</p>\n  <button *ngIf=\"index < questionNum && addedMarker\"\n          mat-raised-button\n          (click)=\"onClick()\">\n    <h2>{{buttonGuess ? 'gæt' : 'næste'}}</h2>\n  </button>\n  <button *ngIf=\"index >= questionNum\"\n          mat-raised-button\n          (click)=\"handleSummery()\">\n    <h2>se resultat</h2>\n  </button>\n</div>\n<div class=\"secret-confetti\" (click)=\"secretConfetti()\"></div>\n\n<app-summery *ngIf=\"showSummery\"\n             [distance]=\"totalDistance\"\n             [scoreBoard$]=\"scoreBoard$\"\n             (replay)=\"playAgain()\"></app-summery>\n<app-map></app-map>\n");
 
 /***/ }),
 
@@ -364,7 +364,7 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".back {\n  position: fixed;\n  top: 5px;\n  right: 5px;\n  z-index: 2;\n  color: #f3ecc2;\n}\n\n.question {\n  position: fixed;\n  padding-left: 20px;\n  z-index: 1;\n  pointer-events: none;\n}\n\n.question p {\n  margin-bottom: 5px;\n  color: #14b1ab;\n}\n\n.question h1 {\n  margin-top: 5px;\n  color: #f3ecc2;\n}\n\n.location {\n  color: #e8505b;\n}\n\n.help {\n  color: antiquewhite;\n}\n\n.btn {\n  position: fixed;\n  bottom: 38px;\n  z-index: 1;\n  text-align: center;\n  width: 100%;\n}\n\n.btn button {\n  text-transform: uppercase;\n  font-family: \"Roboto Condensed\", sans-serif !important;\n  width: 200px;\n  background-color: #e8505b;\n  color: #f3ecc2;\n}\n\n.btn button h3 {\n  margin: 5px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2JhZmZpb3NvL0RvY3VtZW50cy9naXQvZ2VvcXVpei1rYmgvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCIvaG9tZS9iYWZmaW9zby9Eb2N1bWVudHMvZ2l0L2dlb3F1aXota2JoL3NyYy92YXJpYWJsZXMuc2NzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0ksZUFBQTtFQUNBLFFBQUE7RUFDQSxVQUFBO0VBQ0EsVUFBQTtFQUNBLGNDSlc7QUNHZjs7QUZJQTtFQUNJLGVBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxvQkFBQTtBRURKOztBRkdJO0VBQ0ksa0JBQUE7RUFDQSxjQ2hCTTtBQ2VkOztBRklJO0VBQ0ksZUFBQTtFQUNBLGNDcEJPO0FDa0JmOztBRlFBO0VBQ0ksY0M5QlU7QUN5QmQ7O0FGUUE7RUFDRSxtQkFBQTtBRUxGOztBRlFBO0VBQ0ksZUFBQTtFQUNBLFlBQUE7RUFDQSxVQUFBO0VBQ0Esa0JBQUE7RUFDQSxXQUFBO0FFTEo7O0FGT0k7RUFDSSx5QkFBQTtFQUNBLHNEQUFBO0VBQ0EsWUFBQTtFQUNBLHlCQUFBO0VBQ0EsY0M5Q087QUN5Q2Y7O0FGTVE7RUFDSSxXQUFBO0FFSloiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vdmFyaWFibGVzLnNjc3NcIjtcblxuLmJhY2sge1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6NXB4O1xuICAgIHJpZ2h0OiA1cHg7XG4gICAgei1pbmRleDogMjtcbiAgICBjb2xvcjogJGZvdXJ0aC1jb2xvcjtcbn1cblxuLnF1ZXN0aW9uIHtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgcGFkZGluZy1sZWZ0OiAyMHB4O1xuICAgIHotaW5kZXg6IDE7XG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG5cbiAgICBwIHtcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogNXB4O1xuICAgICAgICBjb2xvcjogJHRoaXJkLWNvbG9yO1xuICAgIH1cblxuICAgIGgxIHtcbiAgICAgICAgbWFyZ2luLXRvcDogNXB4O1xuICAgICAgICBjb2xvcjogJGZvdXJ0aC1jb2xvcjtcbiAgICB9XG59XG5cblxuXG4ubG9jYXRpb24ge1xuICAgIGNvbG9yOiAkbWFpbi1jb2xvcjtcbn1cblxuLmhlbHAge1xuICBjb2xvcjogYW50aXF1ZXdoaXRlO1xufVxuXG4uYnRuIHtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgYm90dG9tOiAzOHB4O1xuICAgIHotaW5kZXg6IDE7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIHdpZHRoOiAxMDAlO1xuXG4gICAgYnV0dG9uIHtcbiAgICAgICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcbiAgICAgICAgZm9udC1mYW1pbHk6ICRtYWluLWZvbnQgIWltcG9ydGFudDtcbiAgICAgICAgd2lkdGg6IDIwMHB4O1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKCRtYWluLWNvbG9yLCAxKTtcbiAgICAgICAgY29sb3I6ICRmb3VydGgtY29sb3I7XG4gICAgICAgIGgzIHtcbiAgICAgICAgICAgIG1hcmdpbjogNXB4O1xuICAgICAgICB9XG4gICAgfVxufVxuIiwiJG1haW4tY29sb3I6ICAjZTg1MDViO1xuJHNlY29uZC1jb2xvcjogI2Y5ZDU2ZTtcbiR0aGlyZC1jb2xvcjogIzE0YjFhYjtcbiRmb3VydGgtY29sb3I6ICNmM2VjYzI7XG5cbiRtYWluLWZvbnQ6ICdSb2JvdG8gQ29uZGVuc2VkJywgc2Fucy1zZXJpZjsiLCIuYmFjayB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiA1cHg7XG4gIHJpZ2h0OiA1cHg7XG4gIHotaW5kZXg6IDI7XG4gIGNvbG9yOiAjZjNlY2MyO1xufVxuXG4ucXVlc3Rpb24ge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHBhZGRpbmctbGVmdDogMjBweDtcbiAgei1pbmRleDogMTtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG4ucXVlc3Rpb24gcCB7XG4gIG1hcmdpbi1ib3R0b206IDVweDtcbiAgY29sb3I6ICMxNGIxYWI7XG59XG4ucXVlc3Rpb24gaDEge1xuICBtYXJnaW4tdG9wOiA1cHg7XG4gIGNvbG9yOiAjZjNlY2MyO1xufVxuXG4ubG9jYXRpb24ge1xuICBjb2xvcjogI2U4NTA1Yjtcbn1cblxuLmhlbHAge1xuICBjb2xvcjogYW50aXF1ZXdoaXRlO1xufVxuXG4uYnRuIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBib3R0b206IDM4cHg7XG4gIHotaW5kZXg6IDE7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgd2lkdGg6IDEwMCU7XG59XG4uYnRuIGJ1dHRvbiB7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIGZvbnQtZmFtaWx5OiBcIlJvYm90byBDb25kZW5zZWRcIiwgc2Fucy1zZXJpZiAhaW1wb3J0YW50O1xuICB3aWR0aDogMjAwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICNlODUwNWI7XG4gIGNvbG9yOiAjZjNlY2MyO1xufVxuLmJ0biBidXR0b24gaDMge1xuICBtYXJnaW46IDVweDtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".back {\n  position: fixed;\n  top: 5px;\n  right: 5px;\n  z-index: 2;\n  color: #f3ecc2;\n}\n\n.question {\n  position: fixed;\n  padding-left: 20px;\n  z-index: 1;\n  pointer-events: none;\n}\n\n.question p {\n  margin-bottom: 5px;\n  color: #14b1ab;\n}\n\n.question h1 {\n  margin-top: 5px;\n  color: #f3ecc2;\n}\n\n.location {\n  color: #e8505b;\n}\n\n.help {\n  color: antiquewhite;\n}\n\n.btn {\n  position: fixed;\n  bottom: 38px;\n  z-index: 1;\n  text-align: center;\n  width: 100%;\n}\n\n.btn button {\n  text-transform: uppercase;\n  font-family: \"Roboto Condensed\", sans-serif !important;\n  width: 200px;\n  background-color: #e8505b;\n  color: #f3ecc2;\n}\n\n.btn button h3 {\n  margin: 5px;\n}\n\n.secret-confetti {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  z-index: 10;\n  width: 30px;\n  height: 30px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2JhZmZpb3NvL0RvY3VtZW50cy9naXQvZ2VvcXVpei1rYmgvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCIvaG9tZS9iYWZmaW9zby9Eb2N1bWVudHMvZ2l0L2dlb3F1aXota2JoL3NyYy92YXJpYWJsZXMuc2NzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0UsZUFBQTtFQUNBLFFBQUE7RUFDQSxVQUFBO0VBQ0EsVUFBQTtFQUNBLGNDSmE7QUNHZjs7QUZJQTtFQUNFLGVBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxvQkFBQTtBRURGOztBRkdFO0VBQ0Usa0JBQUE7RUFDQSxjQ2hCVTtBQ2VkOztBRklFO0VBQ0UsZUFBQTtFQUNBLGNDcEJXO0FDa0JmOztBRk1BO0VBQ0UsY0M1Qlk7QUN5QmQ7O0FGTUE7RUFDRSxtQkFBQTtBRUhGOztBRk1BO0VBQ0UsZUFBQTtFQUNBLFlBQUE7RUFDQSxVQUFBO0VBQ0Esa0JBQUE7RUFDQSxXQUFBO0FFSEY7O0FGS0U7RUFDRSx5QkFBQTtFQUNBLHNEQUFBO0VBQ0EsWUFBQTtFQUNBLHlCQUFBO0VBQ0EsY0M1Q1c7QUN5Q2Y7O0FGSUk7RUFDRSxXQUFBO0FFRk47O0FGT0E7RUFDRSxlQUFBO0VBQ0EsU0FBQTtFQUNBLE9BQUE7RUFDQSxXQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUVKRiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgXCIuLi92YXJpYWJsZXMuc2Nzc1wiO1xuXG4uYmFjayB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiA1cHg7XG4gIHJpZ2h0OiA1cHg7XG4gIHotaW5kZXg6IDI7XG4gIGNvbG9yOiAkZm91cnRoLWNvbG9yO1xufVxuXG4ucXVlc3Rpb24ge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHBhZGRpbmctbGVmdDogMjBweDtcbiAgei1pbmRleDogMTtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG5cbiAgcCB7XG4gICAgbWFyZ2luLWJvdHRvbTogNXB4O1xuICAgIGNvbG9yOiAkdGhpcmQtY29sb3I7XG4gIH1cblxuICBoMSB7XG4gICAgbWFyZ2luLXRvcDogNXB4O1xuICAgIGNvbG9yOiAkZm91cnRoLWNvbG9yO1xuICB9XG59XG5cbi5sb2NhdGlvbiB7XG4gIGNvbG9yOiAkbWFpbi1jb2xvcjtcbn1cblxuLmhlbHAge1xuICBjb2xvcjogYW50aXF1ZXdoaXRlO1xufVxuXG4uYnRuIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBib3R0b206IDM4cHg7XG4gIHotaW5kZXg6IDE7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgd2lkdGg6IDEwMCU7XG5cbiAgYnV0dG9uIHtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgIGZvbnQtZmFtaWx5OiAkbWFpbi1mb250ICFpbXBvcnRhbnQ7XG4gICAgd2lkdGg6IDIwMHB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoJG1haW4tY29sb3IsIDEpO1xuICAgIGNvbG9yOiAkZm91cnRoLWNvbG9yO1xuICAgIGgzIHtcbiAgICAgIG1hcmdpbjogNXB4O1xuICAgIH1cbiAgfVxufVxuXG4uc2VjcmV0LWNvbmZldHRpIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IDA7XG4gIHotaW5kZXg6IDEwO1xuICB3aWR0aDogMzBweDtcbiAgaGVpZ2h0OiAzMHB4O1xufVxuIiwiJG1haW4tY29sb3I6ICAjZTg1MDViO1xuJHNlY29uZC1jb2xvcjogI2Y5ZDU2ZTtcbiR0aGlyZC1jb2xvcjogIzE0YjFhYjtcbiRmb3VydGgtY29sb3I6ICNmM2VjYzI7XG5cbiRtYWluLWZvbnQ6ICdSb2JvdG8gQ29uZGVuc2VkJywgc2Fucy1zZXJpZjsiLCIuYmFjayB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiA1cHg7XG4gIHJpZ2h0OiA1cHg7XG4gIHotaW5kZXg6IDI7XG4gIGNvbG9yOiAjZjNlY2MyO1xufVxuXG4ucXVlc3Rpb24ge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHBhZGRpbmctbGVmdDogMjBweDtcbiAgei1pbmRleDogMTtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG4ucXVlc3Rpb24gcCB7XG4gIG1hcmdpbi1ib3R0b206IDVweDtcbiAgY29sb3I6ICMxNGIxYWI7XG59XG4ucXVlc3Rpb24gaDEge1xuICBtYXJnaW4tdG9wOiA1cHg7XG4gIGNvbG9yOiAjZjNlY2MyO1xufVxuXG4ubG9jYXRpb24ge1xuICBjb2xvcjogI2U4NTA1Yjtcbn1cblxuLmhlbHAge1xuICBjb2xvcjogYW50aXF1ZXdoaXRlO1xufVxuXG4uYnRuIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBib3R0b206IDM4cHg7XG4gIHotaW5kZXg6IDE7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgd2lkdGg6IDEwMCU7XG59XG4uYnRuIGJ1dHRvbiB7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIGZvbnQtZmFtaWx5OiBcIlJvYm90byBDb25kZW5zZWRcIiwgc2Fucy1zZXJpZiAhaW1wb3J0YW50O1xuICB3aWR0aDogMjAwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICNlODUwNWI7XG4gIGNvbG9yOiAjZjNlY2MyO1xufVxuLmJ0biBidXR0b24gaDMge1xuICBtYXJnaW46IDVweDtcbn1cblxuLnNlY3JldC1jb25mZXR0aSB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgYm90dG9tOiAwO1xuICBsZWZ0OiAwO1xuICB6LWluZGV4OiAxMDtcbiAgd2lkdGg6IDMwcHg7XG4gIGhlaWdodDogMzBweDtcbn0iXX0= */");
 
 /***/ }),
 
@@ -380,12 +380,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./map/map.service */ "./src/app/map/map.service.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-/* harmony import */ var _services_supabase_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/supabase.service */ "./src/app/services/supabase.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var src_assets_tmf__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/assets/tmf */ "./src/assets/tmf.ts");
+/* harmony import */ var canvas_confetti__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! canvas-confetti */ "./node_modules/canvas-confetti/dist/confetti.module.mjs");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./map/map.service */ "./src/app/map/map.service.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _services_supabase_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/supabase.service */ "./src/app/services/supabase.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var src_assets_tmf__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/assets/tmf */ "./src/assets/tmf.ts");
+
 
 
 
@@ -414,9 +416,9 @@ let AppComponent = class AppComponent {
         this.scoreBoard$ = this.supabase.scoreBoard$;
     }
     ngOnInit() {
-        this.supabase.fetchScoreboard().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(console.log)).subscribe();
+        this.supabase.fetchScoreboard().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(console.log)).subscribe();
         this.supabase.subscribeLiveScoreUpdate();
-        this.supabase.liveScoreUpdate$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(score => score !== null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(score => this.snackBar.open(`${score.user} scored ${score.score} points!`, '', {
+        this.supabase.liveScoreUpdate$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(score => score !== null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(score => this.snackBar.open(`${score.user} scored ${score.score} points!`, '', {
             duration: 2000,
             horizontalPosition: 'end',
             verticalPosition: 'top',
@@ -431,6 +433,9 @@ let AppComponent = class AppComponent {
             this.handleSummery();
         }
     }
+    secretConfetti() {
+        Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    }
     onUserNameChanged(name) {
         this.userName = name;
     }
@@ -441,7 +446,7 @@ let AppComponent = class AppComponent {
         setTimeout(() => {
             this.showLoading = false;
         }, 2000);
-        this.features = src_assets_tmf__WEBPACK_IMPORTED_MODULE_7__["tmf"].features;
+        this.features = src_assets_tmf__WEBPACK_IMPORTED_MODULE_8__["tmf"].features;
         this.selectedCategory = id;
         this.loadingData = {
             category: this.getCategoryFromId(id).name,
@@ -498,10 +503,10 @@ let AppComponent = class AppComponent {
         this.showSummery = true;
         this.totalDistance = Math.round(this.distance.reduce((acc, cur) => acc + cur));
         this.supabase.postScore({
-            quiz_name: src_environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"].quizName,
+            quiz_name: src_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].quizName,
             score: this.totalDistance,
             user: this.userName
-        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(() => this.supabase.fetchScoreboard())).subscribe();
+        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(() => this.supabase.fetchScoreboard())).subscribe();
     }
     playAgain() {
         this.index = 0;
@@ -521,9 +526,9 @@ let AppComponent = class AppComponent {
     }
 };
 AppComponent.ctorParameters = () => [
-    { type: _map_map_service__WEBPACK_IMPORTED_MODULE_2__["MapService"] },
-    { type: _services_supabase_service__WEBPACK_IMPORTED_MODULE_4__["SupabaseService"] },
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatSnackBar"] }
+    { type: _map_map_service__WEBPACK_IMPORTED_MODULE_3__["MapService"] },
+    { type: _services_supabase_service__WEBPACK_IMPORTED_MODULE_5__["SupabaseService"] },
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSnackBar"] }
 ];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
