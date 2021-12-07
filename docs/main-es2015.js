@@ -418,11 +418,12 @@ let AppComponent = class AppComponent {
     ngOnInit() {
         this.supabase.fetchScoreboard().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(console.log)).subscribe();
         this.supabase.subscribeLiveScoreUpdate();
-        this.supabase.liveScoreUpdate$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(score => score !== null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(score => this.snackBar.open(`${score.user} scored ${score.score} points!`, '', {
+        this.supabase.liveScoreUpdate$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(score => score !== null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(score => this.snackBar.open(`${score.user} gættede ${score.score} km forkert! 🎉`, '', {
             duration: 2000,
+            panelClass: 'snack',
             horizontalPosition: 'end',
             verticalPosition: 'top',
-        }))).subscribe();
+        })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(() => Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])())).subscribe();
         this.mapService.addedMarker.subscribe(e => this.addedMarker = e);
     }
     onClick() {
@@ -431,6 +432,10 @@ let AppComponent = class AppComponent {
         }
         else {
             this.handleSummery();
+            Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])({
+                particleCount: 200,
+                origin: { y: 0.9 }
+            });
         }
     }
     secretConfetti() {

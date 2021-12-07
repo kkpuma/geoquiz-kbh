@@ -50,12 +50,14 @@ export class AppComponent implements OnInit {
     this.supabase.subscribeLiveScoreUpdate();
     this.supabase.liveScoreUpdate$.pipe(
       filter(score => score !== null),
-      tap(score => this.snackBar.open(`${score.user} scored ${score.score} points!`, '', {
+      tap(score => this.snackBar.open(`${score.user} gættede ${score.score} km forkert! 🎉`, '', {
         duration: 2000,
+        panelClass: 'snack',
         horizontalPosition: 'end',
         verticalPosition: 'top',
       })
-      )
+      ),
+      tap(() => confetti())
     ).subscribe();
 
     this.mapService.addedMarker.subscribe(e => this.addedMarker = e);
@@ -68,6 +70,10 @@ export class AppComponent implements OnInit {
       this.buttonGuess ? this.answer() : this.nextQuestion();
     } else {
       this.handleSummery();
+      confetti({
+        particleCount: 200,
+        origin: { y: 0.9 }
+      });
     }
   }
 

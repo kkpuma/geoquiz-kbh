@@ -887,11 +887,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.supabase.liveScoreUpdate$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (score) {
             return score !== null;
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (score) {
-            return _this.snackBar.open("".concat(score.user, " scored ").concat(score.score, " points!"), '', {
+            return _this.snackBar.open("".concat(score.user, " g\xE6ttede ").concat(score.score, " km forkert! \uD83C\uDF89"), '', {
               duration: 2000,
+              panelClass: 'snack',
               horizontalPosition: 'end',
               verticalPosition: 'top'
             });
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function () {
+            return Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])();
           })).subscribe();
           this.mapService.addedMarker.subscribe(function (e) {
             return _this.addedMarker = e;
@@ -904,6 +907,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.buttonGuess ? this.answer() : this.nextQuestion();
           } else {
             this.handleSummery();
+            Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])({
+              particleCount: 200,
+              origin: {
+                y: 0.9
+              }
+            });
           }
         }
       }, {
