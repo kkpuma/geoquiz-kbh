@@ -408,7 +408,7 @@ let AppComponent = class AppComponent {
         this.index = 0;
         this.buttonGuess = true;
         this.distance = [];
-        this.questionNum = 1;
+        this.questionNum = 7;
         this.categories = [
             { name: 'START QUIZ', id: 'tmf', icon: 'museum' },
         ];
