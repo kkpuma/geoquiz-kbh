@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   distance: number[] = [];
   totalDistance: number;
   features: any;
-  questionNum = 7;
+  questionNum = 1;
   categories = [
     { name: 'START QUIZ', id: 'tmf', icon: 'museum' },
   ];
