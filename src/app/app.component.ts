@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
   addedMarker = false;
   scoreBoard$ = this.supabase.scoreBoard$;
   answerId: string;
-  currentUserId: string;
+  currentScoreId: string;
 
   constructor(
     private mapService: MapService,
@@ -49,9 +49,9 @@ export class AppComponent implements OnInit {
 
     this.supabase.subscribeLiveScoreUpdate();
     this.supabase.liveScoreUpdate$.pipe(
-      filter(score => score !== null),
+      filter(score => score !== null && score.id !== this.currentScoreId),
       tap(score => this.snackBar.open(`${score.user} gættede ${score.score} km forkert! 🎉`, '', {
-        duration: 2000,
+        duration: 4000,
         panelClass: 'snack',
         horizontalPosition: 'end',
         verticalPosition: 'top',
@@ -172,7 +172,7 @@ export class AppComponent implements OnInit {
         user: this.userName
       }
     ).pipe(
-      tap(score => this.currentUserId = score[0].id),
+      tap(score => this.currentScoreId = score[0].id),
       switchMap(
         () => this.supabase.fetchScoreboard()
       )

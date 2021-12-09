@@ -418,8 +418,8 @@ let AppComponent = class AppComponent {
     ngOnInit() {
         this.supabase.fetchScoreboard().pipe().subscribe();
         this.supabase.subscribeLiveScoreUpdate();
-        this.supabase.liveScoreUpdate$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(score => score !== null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(score => this.snackBar.open(`${score.user} gættede ${score.score} km forkert! 🎉`, '', {
-            duration: 2000,
+        this.supabase.liveScoreUpdate$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(score => score !== null && score.id !== this.currentScoreId), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(score => this.snackBar.open(`${score.user} gættede ${score.score} km forkert! 🎉`, '', {
+            duration: 4000,
             panelClass: 'snack',
             horizontalPosition: 'end',
             verticalPosition: 'top',
@@ -511,7 +511,7 @@ let AppComponent = class AppComponent {
             quiz_name: src_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].quizName,
             score: this.totalDistance,
             user: this.userName
-        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(score => this.currentUserId = score[0].id), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(() => this.supabase.fetchScoreboard())).subscribe();
+        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(score => this.currentScoreId = score[0].id), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(() => this.supabase.fetchScoreboard())).subscribe();
     }
     playAgain() {
         this.index = 0;
@@ -1121,7 +1121,6 @@ const tmf = {
         { "type": "Feature", "properties": { "wikipedia": "da:Nørrebroparken", "wikidata": "Q4993439", "name": "Nørrebroparken", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.5418252683313, 55.695837058449079] } },
         { "type": "Feature", "properties": { "wikipedia": "da:Vigerslevparken", "wikidata": "Q16325001", "name": "Vigerslevparken", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.487183994484374, 55.653705052455038] } },
         { "type": "Feature", "properties": { "wikipedia": "da:Vestvolden", "wikidata": "Q3375908", "name": "Vestvolden", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.433091296599631, 55.665996507060534] } },
-        { "type": "Feature", "properties": { "wikipedia": "da:Grøndalsparken", "wikidata": "Q28167845", "name": "Grøndalsparken", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.49667490002266, 55.683730525287572] } },
         { "type": "Feature", "properties": { "wikipedia": "da:Christianshavns Vold", "wikidata": "Q5110643", "name": "Christianshavns Vold", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.598508925270995, 55.673268208260893] } },
         { "type": "Feature", "properties": { "wikipedia": "da:Ørstedsparken", "wikidata": "Q2686981", "name": "Ørstedsparken", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.566422015180498, 55.681123794731789] } },
         { "type": "Feature", "properties": { "wikipedia": "da:Botanisk Have (København)", "wikidata": "Q892711", "name": "Botanisk Have", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.573925981175682, 55.686875759990897] } },
@@ -1169,7 +1168,6 @@ const tmf = {
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Højsager Plads", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.483861116161172, 55.660898543900316] } },
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Marie Christensens Plads", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.494686790644566, 55.693449137771758] } },
         { "type": "Feature", "properties": { "wikipedia": "da:BaNanna Park", "wikidata": "Q12302697", "name": "BaNanna Park", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.549880781299692, 55.700108207296978] } },
-        { "type": "Feature", "properties": { "wikipedia": "da:Søndermarken", "wikidata": "Q7061127", "name": "Søndermarken", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.524728061555823, 55.669160948464608] } },
         { "type": "Feature", "properties": { "wikipedia": "da:Østre Anlæg (København)", "wikidata": "Q3089054", "name": "Østre Anlæg", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.580637956360576, 55.690212240593127] } },
         { "type": "Feature", "properties": { "wikipedia": "da:Kongens Have", "wikidata": "Q1898947", "name": "Kongens Have", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.579646777675396, 55.685187742651443] } },
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q12317328", "name": "Hothers Plads", "type": "park" }, "geometry": { "type": "Point", "coordinates": [12.541205523189031, 55.701769259631014] } },
@@ -1230,7 +1228,7 @@ const tmf = {
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q57543771", "name": "Vandkunsten", "type": "springvand" }, "geometry": { "type": "Point", "coordinates": [12.5741407, 55.6760886] } },
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Herakles springvand", "type": "springvand" }, "geometry": { "type": "Point", "coordinates": [12.5549738, 55.6722258] } },
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Amagerfolk", "type": "springvand" }, "geometry": { "type": "Point", "coordinates": [12.6065677, 55.6553139] } },
-        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q57543771", "name": "Vandkunsten", "type": "springvand" }, "geometry": { "type": "Point", "coordinates": [12.5741407, 55.6760886] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Bryggebroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.566684170953513, 55.66152744702827] } },
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q81614499", "name": "Bopa Plads", "type": "plads" }, "geometry": { "type": "Point", "coordinates": [12.581145971734697, 55.705261097358346] } },
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Amagerbro Torv", "type": "plads" }, "geometry": { "type": "Point", "coordinates": [12.602941513754566, 55.663399245097395] } },
         { "type": "Feature", "properties": { "wikipedia": "da:Gråbrødretorv", "wikidata": "Q4572693", "name": "Gråbrødretorv", "type": "plads" }, "geometry": { "type": "Point", "coordinates": [12.575918378730458, 55.679869791321508] } },
@@ -1297,7 +1295,6 @@ const tmf = {
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q12340524", "name": "Vandkunsten", "type": "plads" }, "geometry": { "type": "Point", "coordinates": [12.57422907177374, 55.676093387261524] } },
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Sundbyøster Plads", "type": "plads" }, "geometry": { "type": "Point", "coordinates": [12.612540631200227, 55.651898649579465] } },
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Sikeborg Plads", "type": "plads" }, "geometry": { "type": "Point", "coordinates": [12.58508492517632, 55.704902607568421] } },
-        { "type": "Feature", "properties": { "wikipedia": "da:Sankt Thomas Plads", "wikidata": "Q7418767", "name": "Sankt Thomas Plads", "type": "plads" }, "geometry": { "type": "Point", "coordinates": [12.546959339475798, 55.673274535517294] } },
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Sundbyvester Plads", "type": "plads" }, "geometry": { "type": "Point", "coordinates": [12.613080263408101, 55.64641401715982] } },
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q41529306", "name": "Anker Jørgensens Plads", "type": "plads" }, "geometry": { "type": "Point", "coordinates": [12.536536056336926, 55.651191866128144] } },
         { "type": "Feature", "properties": { "wikipedia": "da:Ofelia Plads", "wikidata": "Q12329915", "name": "Ofelia Plads", "type": "plads" }, "geometry": { "type": "Point", "coordinates": [12.59573493927382, 55.681654649835792] } },
@@ -1348,7 +1345,55 @@ const tmf = {
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Fugleøen", "type": "sø" }, "geometry": { "type": "Point", "coordinates": [12.573792613117874, 55.694336282816835] } },
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Fiskeøen", "type": "sø" }, "geometry": { "type": "Point", "coordinates": [12.566506174668579, 55.689469522511139] } },
         { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Utterslev gadekær", "type": "sø" }, "geometry": { "type": "Point", "coordinates": [12.516446388472016, 55.71035828141855] } },
-        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Bademosen", "type": "sø" }, "geometry": { "type": "Point", "coordinates": [12.493430580362737, 55.72256616396696] } }
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Bademosen", "type": "sø" }, "geometry": { "type": "Point", "coordinates": [12.493430580362737, 55.72256616396696] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q50252589", "name": "Sundby Kirkegård", "type": "kirkegård" }, "geometry": { "type": "Point", "coordinates": [12.61694068269559, 55.656947479835708] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Assistens Kirkegård", "wikidata": "Q742670", "name": "Assistens Kirkegård", "type": "kirkegård" }, "geometry": { "type": "Point", "coordinates": [12.549806285927232, 55.690826055253289] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Vor Frelsers Kirkegård", "wikidata": "Q12010102", "name": "Vor Frelsers Kirkegård", "type": "kirkegård" }, "geometry": { "type": "Point", "coordinates": [12.601441872876494, 55.665433647402722] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Garnisons Kirkegård", "wikidata": "Q5523701", "name": "Garnisons Kirkegård", "type": "kirkegård" }, "geometry": { "type": "Point", "coordinates": [12.583641544104017, 55.695278622609678] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Bispebjerg Kirkegård", "wikidata": "Q12303604", "name": "Bispebjerg Kirkegård", "type": "kirkegård" }, "geometry": { "type": "Point", "coordinates": [12.525981229916274, 55.714767353006451] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Mosaisk Nordre Begravelsesplads", "wikidata": "Q15071552", "name": "Mosaisk Nordre Begravelsesplads", "type": "kirkegård" }, "geometry": { "type": "Point", "coordinates": [12.557213756847306, 55.690964748862307] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Vestre Kirkegård (København)", "wikidata": "Q3305530", "name": "Vestre Kirkegård", "type": "kirkegård" }, "geometry": { "type": "Point", "coordinates": [12.530088907160824, 55.657959042651932] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Holmens Kirkegård", "wikidata": "Q3380319", "name": "Holmens Kirkegård", "type": "kirkegård" }, "geometry": { "type": "Point", "coordinates": [12.580112308669186, 55.693656524795486] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Muslimske grave", "type": "kirkegård" }, "geometry": { "type": "Point", "coordinates": [12.528277664549231, 55.65473404743409] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Langebro", "wikidata": "Q944453", "name": "Langebro", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.578733096577864, 55.67032460155464] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q7620223", "name": "Stormbroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.575926137072644, 55.675604309710877] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q56695859", "name": "Bryghusbroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.579911373453236, 55.672416522553959] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q56695874", "name": "Børsbroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.584728714928552, 55.675933738354807] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q56695894", "name": "Christian D. IV's Bro", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.587166150613438, 55.675590436262809] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q56695906", "name": "Holmens Bro", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.582458978297034, 55.676625380165852] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q12060368", "name": "Højbro", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.579942299118191, 55.677583378663961] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": "Q11988455", "name": "Marmorbroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.576775113768049, 55.674900196239463] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Knippelsbro", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.587307413723209, 55.67470719172956] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Frederiksholmbroen", "wikidata": "Q8544080", "name": "Frederiksholmsbroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.602715093717622, 55.678961363301774] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Nyholmsbroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.606625615431421, 55.683513765091924] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Kilometerbroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.639188173292297, 55.657695354719195] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Lagunebroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.642541617639761, 55.650964550798641] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Trangravsbroen", "wikidata": "Q12343325", "name": "Trangravsbroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.598933013872452, 55.677690500090925] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Tietgensbroen", "wikidata": "Q12339376", "name": "Tietgensbroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.566272595394262, 55.671016714391165] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Proviantbroen", "wikidata": "Q12332474", "name": "Proviantbroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.600751689000441, 55.679443200104579] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Sortebro", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.469622354705603, 55.68044018187711] } },
+        { "type": "Feature", "properties": { "wikipedia": "da:Dybbølsbro", "wikidata": "Q12309082", "name": "Dybbølsbro", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.560050056547045, 55.66426639820795] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Lille Langebro", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.579976152853877, 55.671048378017169] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Smyrnavej Legeplads", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.612930534446704, 55.651437089764151] } },
+        { "type": "Feature", "properties": { "wikidata": "Q64842211", "name": "Trafiklegepladsen", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.570491106807777, 55.704476270265936] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Legepladsen i Kongens Have", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.580722351142164, 55.685718895400107] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Tårnlegepladsen", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.569519387578486, 55.697380346547469] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Legepladsen Enghave", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.541609090742559, 55.667705077943033] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Dragelegepladsen", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.59718369951694, 55.673680533213471] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Legepladsen i Gunløgsgade", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.579838373618024, 55.664546462718533] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Dinosaurlegepladsen", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.519918927771956, 55.642431240662326] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Sundbyvesterplads Legeplads", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.612462484403094, 55.646428141957536] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Børnehuset 8tallet", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.570632912748632, 55.617181456464436] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Kildevældslegepladsen", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.565301404482605, 55.714227666868155] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Bellahus Legeplads", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.584008888652553, 55.638172246252438] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Legeplads i Grøndalsparken", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.491548455283118, 55.681179081015181] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Den skæve legeplads", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.595158437558682, 55.654072097409156] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Elefantlegepladsen", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.533092619736509, 55.72010640253233] } },
+        { "type": "Feature", "properties": { "wikidata": null, "name": "Edderkoppelegepladsen", "type": "legeplads" }, "geometry": { "type": "Point", "coordinates": [12.594094584975554, 55.658205875379579] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Cykelslangen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.563349722720483, 55.66269864502862] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Dronning Louises Bro", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.563702719681046, 55.686735135244007] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Fredens Bro", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.570319118833261, 55.691503613169566] } },
+        { "type": "Feature", "properties": { "wikipedia": null, "wikidata": null, "name": "Inderhavnsbroen", "type": "bro" }, "geometry": { "type": "Point", "coordinates": [12.594732775585811, 55.678479555784492] } }
     ]
 };
 
