@@ -907,12 +907,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.buttonGuess ? this.answer() : this.nextQuestion();
           } else {
             this.handleSummery();
-            Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])({
-              particleCount: 200,
-              origin: {
-                y: 0.9
-              }
-            });
           }
         }
       }, {
@@ -957,7 +951,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var dist = this.mapService.getDistance(guessCoords, answerCoords);
           this.distance.push(dist);
           this.mapService.addLineToMap(line, dist);
-          this.mapService.zoomTo(line); // Add popup
+          this.mapService.zoomTo(line); // Confetti if distance is below 1 km
+
+          if (dist < 1) Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])({
+            particleCount: 200,
+            origin: {
+              y: 0.95
+            }
+          }); // Add popup
 
           var name = feature.properties.name;
           var wd = feature.properties.wikidata;
@@ -1012,6 +1013,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(function () {
             return _this3.supabase.fetchScoreboard();
           })).subscribe();
+          Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])({
+            particleCount: 200,
+            origin: {
+              y: 0.9
+            }
+          });
         }
       }, {
         key: "playAgain",

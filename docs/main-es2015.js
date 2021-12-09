@@ -432,10 +432,6 @@ let AppComponent = class AppComponent {
         }
         else {
             this.handleSummery();
-            Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])({
-                particleCount: 200,
-                origin: { y: 0.9 }
-            });
         }
     }
     secretConfetti() {
@@ -471,6 +467,12 @@ let AppComponent = class AppComponent {
         this.distance.push(dist);
         this.mapService.addLineToMap(line, dist);
         this.mapService.zoomTo(line);
+        // Confetti if distance is below 1 km
+        if (dist < 1)
+            Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])({
+                particleCount: 200,
+                origin: { y: 0.95 }
+            });
         // Add popup
         const name = feature.properties.name;
         const wd = feature.properties.wikidata;
@@ -512,6 +514,10 @@ let AppComponent = class AppComponent {
             score: this.totalDistance,
             user: this.userName
         }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(score => this.currentScoreId = score[0].id), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(() => this.supabase.fetchScoreboard())).subscribe();
+        Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])({
+            particleCount: 200,
+            origin: { y: 0.9 }
+        });
     }
     playAgain() {
         this.index = 0;
