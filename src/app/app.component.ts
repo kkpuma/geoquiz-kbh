@@ -70,10 +70,6 @@ export class AppComponent implements OnInit {
       this.buttonGuess ? this.answer() : this.nextQuestion();
     } else {
       this.handleSummery();
-      confetti({
-        particleCount: 200,
-        origin: { y: 0.9 }
-      });
     }
   }
 
@@ -120,6 +116,13 @@ export class AppComponent implements OnInit {
     this.distance.push(dist);
     this.mapService.addLineToMap(line, dist);
     this.mapService.zoomTo(line);
+
+    // Confetti if distance is below 1 km
+    if (dist < 1)
+    confetti({
+      particleCount: 200,
+      origin: { y: 0.95 }
+    });
 
     // Add popup
     const name = feature.properties.name;
@@ -177,6 +180,11 @@ export class AppComponent implements OnInit {
         () => this.supabase.fetchScoreboard()
       )
     ).subscribe();
+
+    confetti({
+      particleCount: 200,
+      origin: { y: 0.9 }
+    });
 
   }
 
