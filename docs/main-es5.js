@@ -2014,30 +2014,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       "features": [{
         "type": "Feature",
         "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Krogebjergparken",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.464967929424795, 55.696570152079417]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Utterslev Mose",
-          "wikidata": "Q3375626",
-          "name": "Utterslev Mose",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.505604273162316, 55.716293710179215]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Superkilen",
           "wikidata": "Q3466525",
           "name": "Superkilen",
@@ -2074,42 +2050,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": "da:Vigerslevparken",
-          "wikidata": "Q16325001",
-          "name": "Vigerslevparken",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.487183994484374, 55.653705052455038]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Vestvolden",
-          "wikidata": "Q3375908",
-          "name": "Vestvolden",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.433091296599631, 55.665996507060534]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Christianshavns Vold",
-          "wikidata": "Q5110643",
-          "name": "Christianshavns Vold",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.598508925270995, 55.673268208260893]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Ørstedsparken",
           "wikidata": "Q2686981",
           "name": "Ørstedsparken",
@@ -2122,30 +2062,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": "da:Botanisk Have (København)",
-          "wikidata": "Q892711",
-          "name": "Botanisk Have",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.573925981175682, 55.686875759990897]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Hørsholmparken",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.542796911512911, 55.691711177519963]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": null,
           "wikidata": null,
           "name": "Filipsparken",
@@ -2154,18 +2070,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.61725582781842, 55.653843131923225]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Fredens Park",
-          "wikidata": "Q12312487",
-          "name": "Fredens Park",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.568237579251388, 55.693189216391353]
         }
       }, {
         "type": "Feature",
@@ -2207,18 +2111,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "type": "Feature",
         "properties": {
           "wikipedia": null,
-          "wikidata": null,
-          "name": "Søborg Mose",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.519860720809747, 55.725092340595481]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
           "wikidata": "Q23754075",
           "name": "Lergravsparken",
           "type": "park"
@@ -2226,66 +2118,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.619035174497878, 55.661989086471671]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Amager Strandpark - Tiøren",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.643563580350193, 55.648564110548044]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Amager Strandpark - Femøren",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.646040324151995, 55.646722142908693]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Kastrup Strandpark",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.646847459435051, 55.643074400908823]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Lersøparken",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.543645243515707, 55.709829350630336]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Kildevældssøen",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.567122420822249, 55.71472464021096]
         }
       }, {
         "type": "Feature",
@@ -2338,126 +2170,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": "da:Det Kongelige Biblioteks Have",
-          "wikidata": "Q3375611",
-          "name": "Bibliotekshaven",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.58129539833844, 55.674649868576395]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Høje Gladsaxe Park",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.49123690307886, 55.725449211615143]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Hulgårds Plads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.522168828311141, 55.705109096179434]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Enveloppeparken",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.592131876865489, 55.668250489038691]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Vestvolden",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.477761402931053, 55.716809995501855]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Guldbergs Plads",
-          "wikidata": "Q22916523",
-          "name": "Guldbergs Plads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.553952738936029, 55.697113847397588]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Ryvangens Naturpark",
-          "wikidata": "Q12334065",
-          "name": "Ryvangens Naturpark",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.565965348862147, 55.722892210705986]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Pistolskydebanen",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.563871419115733, 55.722603364396122]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Piosplænen",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.53321746135698, 55.64978654878982]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Byparken",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.576942166772325, 55.633666770500334]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": null,
           "wikidata": "Q19373582",
           "name": "Hans Tavsens Park",
@@ -2466,42 +2178,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.547723464570652, 55.689131281034456]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Otto Krabbes Plads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.55264660595814, 55.670185110502366]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Sankt Pauls Plads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.5866829, 55.6874112]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Churchillparken",
-          "wikidata": "Q3375933",
-          "name": "Churchillparken",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.59520506470545, 55.688441159354362]
         }
       }, {
         "type": "Feature",
@@ -2530,18 +2206,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": "da:Hjalmar Brantings Plads",
-          "wikidata": "Q55776578",
-          "name": "Hjalmar Brantings Plads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.581590019156453, 55.692283726028322]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Valbyparken",
           "wikidata": "Q12008828",
           "name": "Valbyparken",
@@ -2550,18 +2214,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.518748638300679, 55.641174043253962]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Ågade Park",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.538391668059743, 55.689628956581323]
         }
       }, {
         "type": "Feature",
@@ -2580,72 +2232,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "properties": {
           "wikipedia": null,
           "wikidata": null,
-          "name": "Skovbrynet",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.582020004166836, 55.632478689206984]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q78647357",
-          "name": "Nordvestparken",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.523986402247276, 55.703583217766514]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Fremtidsskoven",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.601072955278905, 55.673245734605437]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
           "name": "Glyptotekshaven",
           "type": "park"
         },
         "geometry": {
           "type": "Point",
           "coordinates": [12.5712155495427, 55.672120228700742]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Højsager Plads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.483861116161172, 55.660898543900316]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Marie Christensens Plads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.494686790644566, 55.693449137771758]
         }
       }, {
         "type": "Feature",
@@ -2686,18 +2278,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": null,
-          "wikidata": "Q12317328",
-          "name": "Hothers Plads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.541205523189031, 55.701769259631014]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Mimersparken",
           "wikidata": "Q17259238",
           "name": "Mimersparken",
@@ -2718,18 +2298,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.611437909341758, 55.661061848683445]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Eidsvoll Plads",
-          "wikidata": "Q17165570",
-          "name": "Eidsvoll Plads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.587823300461197, 55.690884824803902]
         }
       }, {
         "type": "Feature",
@@ -2770,66 +2338,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Heerup-Haven",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.596483716565045, 55.686582900064629]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Amaliehaven",
-          "wikidata": "Q3434243",
-          "name": "Amaliehaven",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.595141349860215, 55.68361353875332]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Valbyparkspejderne",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.52401517240399, 55.645798982219254]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Thors Have",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.547256485048127, 55.696539604676651]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Søholmslund",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.556007403933263, 55.723226173556128]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Fælledparken",
           "wikidata": "Q2562401",
           "name": "Fælledparken",
@@ -2838,30 +2346,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.568083532552606, 55.702264303660392]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Poul Henningsens Plads",
-          "wikidata": "Q12332168",
-          "name": "Poul Henningsens Plads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.577003871569982, 55.708607942628134]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Kildevældslegepladsen",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.565301404482605, 55.714227666868155]
         }
       }, {
         "type": "Feature",
@@ -2878,102 +2362,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "kastanjetræer",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.565717050754023, 55.689776667716949]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Husum Bypark",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.478438515512902, 55.709925462233009]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q16985431",
-          "name": "Brønshøjparken",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.508504409480787, 55.706673208855989]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Emaljehaven",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.53456513456312, 55.704392008216175]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Christianshavns Enveloppe",
-          "wikidata": "Q28837098",
-          "name": "Christianshavns Enveloppe",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.608499238173723, 55.675965179173652]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Beboerhusets park",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.600906521803505, 55.652364060560018]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Trondhjems Plads",
-          "wikidata": "Q16324819",
-          "name": "Trondhjems Plads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.5884559, 55.6941791]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Pistolskydebanen",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.565513832373625, 55.724294357386782]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Havneparken",
           "wikidata": "Q3430665",
           "name": "Havneparken",
@@ -2982,234 +2370,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.575307665988559, 55.666203907512681]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Voldparken",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.479133893817204, 55.71408567192092]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Skotlandsplads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.604874736122952, 55.658120350875876]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "park",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.568460147798893, 55.659090105512099]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Stærepark",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.522555478657054, 55.702540277514387]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "One tree park",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.5498948, 55.66807093333334]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Carl Jacobsens Have",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.530094641210223, 55.666660255538559]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Odins Lomme",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.550434911935996, 55.696982541567131]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Byfælleden",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.571433738355594, 55.62458825822327]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Teglholmens Grønne Kile",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.541843585343182, 55.652692576620666]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Den Grønne Kile",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.547581190630114, 55.651579994697819]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Dyrelegepladsen i Valby",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.500845327745312, 55.648752495786006]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Blegdamsfælleden",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.567585121921397, 55.700838506711975]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Klosterfælleden",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.569524405412645, 55.705444809126568]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Kulbaneparken",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.494499651872639, 55.65777503993273]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Hannemanns Park",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.578774561302428, 55.627026914732163]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Vesten for humlen",
-          "wikidata": "Q91412496",
-          "name": "Vesten for Humlen",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.537051112695643, 55.667121286734023]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Saxopark",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.551344068710295, 55.670804505661295]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Grønttorvsparken",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.50473733890116, 55.654898712617879]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Kofoeds Plads",
-          "type": "park"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.618229184434243, 55.66611044784235]
         }
       }, {
         "type": "Feature",
@@ -3430,18 +2590,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": "da:Balders Plads",
-          "wikidata": "Q12302776",
-          "name": "Balders Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.548794684578853, 55.701338247317373]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Kultorvet",
           "wikidata": "Q12323100",
           "name": "Kultorvet",
@@ -3474,30 +2622,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.560688135274294, 55.66985791476295]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q12068230",
-          "name": "Sankt Jakobs Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.577910134961176, 55.703250511328356]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Victor Borges Plads",
-          "wikidata": "Q7925740",
-          "name": "Victor Borges Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.580875619683162, 55.701585334339413]
         }
       }, {
         "type": "Feature",
@@ -3574,30 +2698,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": "da:Bispetorvet (København)",
-          "wikidata": "Q3378448",
-          "name": "Bispetorvet",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.571726047238945, 55.679131402798774]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Trinitatis Kirkeplads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.576548088348668, 55.681558001801974]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": null,
           "wikidata": "Q7923418",
           "name": "Vesterbro Torv",
@@ -3634,54 +2734,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": null,
-          "wikidata": "Q21250772",
-          "name": "Sankt Nikolaj Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.581643089728576, 55.67870334234054]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q8079249",
-          "name": "Østerfælled Torv",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.576057749975517, 55.705747834439698]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Møntmester Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.521723453436557, 55.707499895414834]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q12343225",
-          "name": "Toftegårds Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.517321300110298, 55.662181114204841]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Prins Jørgens Gård",
           "wikidata": "Q12332361",
           "name": "Prins Jørgens Gård",
@@ -3706,18 +2758,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": "da:Magasins Torv",
-          "wikidata": "Q11987737",
-          "name": "Magasins Torv",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.582712594543883, 55.679506492708718]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": null,
           "wikidata": "Q11967560",
           "name": "Enghave Plads",
@@ -3726,66 +2766,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.545484046311275, 55.666978820130176]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Porcelænstorvet",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.510043403157553, 55.664859665446258]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Thorkilds Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.600327515158606, 55.673196184767747]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Karl Madsens Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.598818626122036, 55.673802566080958]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q24053218",
-          "name": "Valby Tingsted",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.514089483800337, 55.665935613882091]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q12341895",
-          "name": "Æggetorvet",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.571347948227517, 55.682608240754483]
         }
       }, {
         "type": "Feature",
@@ -3803,30 +2783,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "type": "Feature",
         "properties": {
           "wikipedia": null,
-          "wikidata": "Q98658948",
-          "name": "Den Røde Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.542450642840603, 55.699662481581477]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Frode Jakobsens Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.49079223875043, 55.687103164147871]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
           "wikidata": null,
           "name": "Vanløse Torv",
           "type": "plads"
@@ -3834,54 +2790,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.490500238015221, 55.687605043706618]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Nyboder Plads",
-          "wikidata": "Q20742907",
-          "name": "Nyboder Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.586136572646742, 55.689374773646982]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Theodor Christensens Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.605078867353765, 55.681161756013275]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Monrads Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.501173150762654, 55.667764274232368]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q98658520",
-          "name": "Den Sorte Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.542678393626749, 55.701176771362746]
         }
       }, {
         "type": "Feature",
@@ -3911,30 +2819,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "type": "Feature",
         "properties": {
           "wikipedia": null,
-          "wikidata": null,
-          "name": "Grøndal Torv",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.513041007170337, 55.693175282638677]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Liva Weels Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.546102809640209, 55.665443515720312]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
           "wikidata": "Q12317501",
           "name": "Husum Torv",
           "type": "plads"
@@ -3942,18 +2826,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.471658610406003, 55.711796297397925]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Yrsa Plads",
-          "wikidata": "Q12341725",
-          "name": "Yrsas Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.55807542506507, 55.665341687952811]
         }
       }, {
         "type": "Feature",
@@ -3982,18 +2854,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": "da:Franciska Clausens Plads",
-          "wikidata": "Q99641204",
-          "name": "Franciska Clausen Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.534030193252024, 55.666133766482965]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Kongens Nytorv",
           "wikidata": "Q1589941",
           "name": "Kongens Nytorv",
@@ -4008,48 +2868,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "properties": {
           "wikipedia": null,
           "wikidata": null,
-          "name": "Guldberg Byplads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.55300335608907, 55.693446758349019]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
           "name": "Boltens Gård",
           "type": "plads"
         },
         "geometry": {
           "type": "Point",
           "coordinates": [12.585221222535056, 55.68218775353558]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q62655222",
-          "name": "Borups Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.539288515191698, 55.691395768527769]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Axel Larsens Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.54170407929681, 55.698745894438417]
         }
       }, {
         "type": "Feature",
@@ -4078,30 +2902,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": null,
-          "wikidata": "Q12315446",
-          "name": "Hans Knudsens Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.56074288343153, 55.712956620248406]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Melchiors Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.585492364292946, 55.703413606619151]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Sølvtorvet",
           "wikidata": "Q12338344",
           "name": "Sølvtorvet",
@@ -4126,42 +2926,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": "da:Göteborg Plads",
-          "wikidata": "Q21853581",
-          "name": "Göteborg Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.597073161799504, 55.706893172749375]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q12314642",
-          "name": "Gunnar Nu Hansens Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.575061701657326, 55.704926299720022]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q12340524",
-          "name": "Vandkunsten",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.57422907177374, 55.676093387261524]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": null,
           "wikidata": null,
           "name": "Sundbyøster Plads",
@@ -4170,18 +2934,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.612540631200227, 55.651898649579465]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Sikeborg Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.58508492517632, 55.704902607568421]
         }
       }, {
         "type": "Feature",
@@ -4222,42 +2974,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Viggo Kampmanns Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.565259802086642, 55.654896980869985]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Rigsdagsgården",
-          "wikidata": "Q12333473",
-          "name": "Rigsdagsgården",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.580579547317416, 55.675459420902513]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q81614774",
-          "name": "Jens Nielsens Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.577959370492557, 55.715414847942675]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Højbro Plads",
           "wikidata": "Q3434130",
           "name": "Højbro Plads",
@@ -4266,18 +2982,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.579878589771958, 55.678302259291314]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Frue Plads",
-          "wikidata": "Q15221151",
-          "name": "Frue Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.57263963890771, 55.679681021743178]
         }
       }, {
         "type": "Feature",
@@ -4318,114 +3022,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": "da:Søren Kierkegaards Plads",
-          "wikidata": "Q7666566",
-          "name": "Søren Kierkegaards Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.580897509933164, 55.672992607415807]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Byparken",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.554750583293984, 55.64952038250884]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Sankt Annæ Plads",
-          "wikidata": "Q3365803",
-          "name": "Sankt Annæ Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.591591071907972, 55.681522131296326]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q88449768",
-          "name": "Karen Blixens Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.589127238882122, 55.661905609800527]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q57516692",
-          "name": "Bryghuspladsen",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.578772722310811, 55.672433466345289]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q57547049",
-          "name": "Georg Brandes Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.578484829497983, 55.687492218790645]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Kirkepladsen",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.593875521404803, 55.69139206088078]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Paradeplads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.595671430291908, 55.692097906135807]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q3359396",
-          "name": "Søtorvet",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.565120870128052, 55.68616210421775]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": null,
           "wikidata": "Q62606688",
           "name": "Mozarts Plads",
@@ -4434,18 +3030,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.534052658455153, 55.648771999992761]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Købkes Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.535647849371394, 55.667158454235086]
         }
       }, {
         "type": "Feature",
@@ -4470,18 +3054,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.557447737766074, 55.703464926007833]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": "Q66363949",
-          "name": "Nina Bangs Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.57768280444909, 55.681847242207617]
         }
       }, {
         "type": "Feature",
@@ -4518,66 +3090,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.563289682442855, 55.678160039674488]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Folmer Bendtsens Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.53804217614314, 55.700129369869472]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Ove Rodes Plads",
-          "wikidata": "Q12330678",
-          "name": "Ove Rodes Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.572960473301524, 55.707412524845815]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Bryggernes Plads",
-          "wikidata": "Q91353169",
-          "name": "Bryggernes Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.532584435783551, 55.666724345409982]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Morten Grunwalds Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.582178672547629, 55.709906372725811]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Smedetoftens Plads",
-          "type": "plads"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.522402926195213, 55.709533619059179]
         }
       }, {
         "type": "Feature",
@@ -4822,30 +3334,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": "da:Vor Frelsers Kirkegård",
-          "wikidata": "Q12010102",
-          "name": "Vor Frelsers Kirkegård",
-          "type": "kirkegård"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.601441872876494, 55.665433647402722]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Garnisons Kirkegård",
-          "wikidata": "Q5523701",
-          "name": "Garnisons Kirkegård",
-          "type": "kirkegård"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.583641544104017, 55.695278622609678]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Bispebjerg Kirkegård",
           "wikidata": "Q12303604",
           "name": "Bispebjerg Kirkegård",
@@ -4858,18 +3346,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         "type": "Feature",
         "properties": {
-          "wikipedia": "da:Mosaisk Nordre Begravelsesplads",
-          "wikidata": "Q15071552",
-          "name": "Mosaisk Nordre Begravelsesplads",
-          "type": "kirkegård"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.557213756847306, 55.690964748862307]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
           "wikipedia": "da:Vestre Kirkegård (København)",
           "wikidata": "Q3305530",
           "name": "Vestre Kirkegård",
@@ -4878,30 +3354,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.530088907160824, 55.657959042651932]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": "da:Holmens Kirkegård",
-          "wikidata": "Q3380319",
-          "name": "Holmens Kirkegård",
-          "type": "kirkegård"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.580112308669186, 55.693656524795486]
-        }
-      }, {
-        "type": "Feature",
-        "properties": {
-          "wikipedia": null,
-          "wikidata": null,
-          "name": "Muslimske grave",
-          "type": "kirkegård"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [12.528277664549231, 55.65473404743409]
         }
       }, {
         "type": "Feature",
@@ -5354,6 +3806,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "geometry": {
           "type": "Point",
           "coordinates": [12.594732775585811, 55.678479555784492]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "wikipedia": null,
+          "wikidata": null,
+          "name": "Brønshøj kirkegård",
+          "type": "kirkegård"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [12.500135525720687, 55.705977966419887]
         }
       }]
     };
