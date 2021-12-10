@@ -131,7 +131,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"scoreboard\">\n  <h3>Scoreboard</h3>\n  <table>\n    <tr>\n      <th>#</th>\n      <th>Navn</th>\n      <th>Score</th>\n    </tr>\n    <tr *ngFor=\"let score of scoreBoard$ | async; index as i\" [ngClass]=\"{'highlight': score.id === currentUserId}\">\n      <td>{{i + 1}}</td>\n      <td>{{score.user}}</td>\n      <td>{{score.score}}</td>\n    </tr>\n  </table>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"scoreboard\">\n  <h3>Scoreboard</h3>\n  <table>\n    <tr>\n      <th>#</th>\n      <th>Navn</th>\n      <th>Score</th>\n    </tr>\n    <tr *ngFor=\"let score of scoreBoard$ | async; index as i\" [ngClass]=\"{'highlight': score.id === currentUserId}\">\n      <td>{{i + 1}}</td>\n      <td>{{score.user}}</td>\n      <td>{{round(score.score)}}</td>\n    </tr>\n  </table>\n</div>\n";
     /***/
   },
 
@@ -151,7 +151,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"summary\">\n    <div class=\"item\">\n        <h1>Du gættede <span>{{distance}}</span> km forkert</h1>\n        <br><br>\n        <app-scoreboard [scoreBoard$]=\"scoreBoard$\" [currentUserId]=\"currentUserId\"></app-scoreboard>\n        <br><br>\n        <button mat-flat-button (click)=\"playAgain()\">PRØV IGEN</button>\n    </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"summary\">\n    <div class=\"item\">\n        <h1>Du gættede <span>{{round(distance)}}</span> km forkert</h1>\n        <br><br>\n        <app-scoreboard [scoreBoard$]=\"scoreBoard$\" [currentUserId]=\"currentUserId\"></app-scoreboard>\n        <br><br>\n        <button mat-flat-button (click)=\"playAgain()\">PRØV IGEN</button>\n    </div>\n</div>\n";
     /***/
   },
 
@@ -887,12 +887,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.supabase.liveScoreUpdate$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (score) {
             return score !== null && score.id !== _this.currentScoreId;
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (score) {
-            return _this.snackBar.open("".concat(score.user, " g\xE6ttede ").concat(score.score, " km forkert! \uD83C\uDF89"), '', {
+            return _this.snackBar.open("".concat(score.user, " g\xE6ttede ").concat(Math.round(score.score * 10) / 10, " km forkert! \uD83C\uDF89"), '', {
               duration: 4000,
               panelClass: 'snack',
               horizontalPosition: 'end',
               verticalPosition: 'top'
             });
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["concatMap"])(function () {
+            return _this.supabase.fetchScoreboard();
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function () {
             return Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])();
           })).subscribe();
@@ -1001,9 +1003,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var _this3 = this;
 
           this.showSummery = true;
-          this.totalDistance = Math.round(this.distance.reduce(function (acc, cur) {
+          this.totalDistance = this.distance.reduce(function (acc, cur) {
             return acc + cur;
-          }));
+          });
           this.supabase.postScore({
             quiz_name: src_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].quizName,
             score: this.totalDistance,
@@ -1750,6 +1752,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ScoreboardComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "round",
+        value: function round(score) {
+          return Math.round(score * 10) / 10;
+        }
       }]);
 
       return ScoreboardComponent;
@@ -1938,6 +1945,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(SummeryComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "round",
+        value: function round(score) {
+          return Math.round(score * 10) / 10;
+        }
       }, {
         key: "playAgain",
         value: function playAgain() {

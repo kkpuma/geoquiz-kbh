@@ -1,6 +1,6 @@
 <div class="summary">
     <div class="item">
-        <h1>Du gættede <span>{{distance}}</span> km forkert</h1>
+        <h1>Du gættede <span>{{round(distance)}}</span> km forkert</h1>
         <br><br>
         <app-scoreboard [scoreBoard$]="scoreBoard$" [currentUserId]="currentUserId"></app-scoreboard>
         <br><br>

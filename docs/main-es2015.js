@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"scoreboard\">\n  <h3>Scoreboard</h3>\n  <table>\n    <tr>\n      <th>#</th>\n      <th>Navn</th>\n      <th>Score</th>\n    </tr>\n    <tr *ngFor=\"let score of scoreBoard$ | async; index as i\" [ngClass]=\"{'highlight': score.id === currentUserId}\">\n      <td>{{i + 1}}</td>\n      <td>{{score.user}}</td>\n      <td>{{score.score}}</td>\n    </tr>\n  </table>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"scoreboard\">\n  <h3>Scoreboard</h3>\n  <table>\n    <tr>\n      <th>#</th>\n      <th>Navn</th>\n      <th>Score</th>\n    </tr>\n    <tr *ngFor=\"let score of scoreBoard$ | async; index as i\" [ngClass]=\"{'highlight': score.id === currentUserId}\">\n      <td>{{i + 1}}</td>\n      <td>{{score.user}}</td>\n      <td>{{round(score.score)}}</td>\n    </tr>\n  </table>\n</div>\n");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"summary\">\n    <div class=\"item\">\n        <h1>Du gættede <span>{{distance}}</span> km forkert</h1>\n        <br><br>\n        <app-scoreboard [scoreBoard$]=\"scoreBoard$\" [currentUserId]=\"currentUserId\"></app-scoreboard>\n        <br><br>\n        <button mat-flat-button (click)=\"playAgain()\">PRØV IGEN</button>\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"summary\">\n    <div class=\"item\">\n        <h1>Du gættede <span>{{round(distance)}}</span> km forkert</h1>\n        <br><br>\n        <app-scoreboard [scoreBoard$]=\"scoreBoard$\" [currentUserId]=\"currentUserId\"></app-scoreboard>\n        <br><br>\n        <button mat-flat-button (click)=\"playAgain()\">PRØV IGEN</button>\n    </div>\n</div>\n");
 
 /***/ }),
 
@@ -418,12 +418,12 @@ let AppComponent = class AppComponent {
     ngOnInit() {
         this.supabase.fetchScoreboard().pipe().subscribe();
         this.supabase.subscribeLiveScoreUpdate();
-        this.supabase.liveScoreUpdate$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(score => score !== null && score.id !== this.currentScoreId), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(score => this.snackBar.open(`${score.user} gættede ${score.score} km forkert! 🎉`, '', {
+        this.supabase.liveScoreUpdate$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(score => score !== null && score.id !== this.currentScoreId), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(score => this.snackBar.open(`${score.user} gættede ${Math.round(score.score * 10) / 10} km forkert! 🎉`, '', {
             duration: 4000,
             panelClass: 'snack',
             horizontalPosition: 'end',
             verticalPosition: 'top',
-        })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(() => Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])())).subscribe();
+        })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["concatMap"])(() => this.supabase.fetchScoreboard()), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(() => Object(canvas_confetti__WEBPACK_IMPORTED_MODULE_2__["default"])())).subscribe();
         this.mapService.addedMarker.subscribe(e => this.addedMarker = e);
     }
     onClick() {
@@ -508,7 +508,7 @@ let AppComponent = class AppComponent {
     }
     handleSummery() {
         this.showSummery = true;
-        this.totalDistance = Math.round(this.distance.reduce((acc, cur) => acc + cur));
+        this.totalDistance = this.distance.reduce((acc, cur) => acc + cur);
         this.supabase.postScore({
             quiz_name: src_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].quizName,
             score: this.totalDistance,
@@ -962,6 +962,9 @@ let ScoreboardComponent = class ScoreboardComponent {
     constructor() { }
     ngOnInit() {
     }
+    round(score) {
+        return Math.round(score * 10) / 10;
+    }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
@@ -1074,6 +1077,9 @@ let SummeryComponent = class SummeryComponent {
         this.replay = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     ngOnInit() {
+    }
+    round(score) {
+        return Math.round(score * 10) / 10;
     }
     playAgain() {
         this.replay.emit();

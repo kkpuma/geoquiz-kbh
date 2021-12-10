@@ -18,6 +18,10 @@ export class SummeryComponent implements OnInit {
   ngOnInit() {
   }
 
+  round(score: number): number {
+    return Math.round(score * 10) / 10;
+  }
+
   playAgain() {
     this.replay.emit();
   }

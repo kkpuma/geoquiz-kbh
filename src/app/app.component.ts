@@ -3,7 +3,7 @@ import { Feature } from 'geojson';
 import confetti from 'canvas-confetti';
 import { MapService } from './map/map.service';
 import { Loading, Category } from './interfaces';
-import { filter, switchMap, tap } from 'rxjs/operators';
+import { concatMap, filter, switchMap, tap } from 'rxjs/operators';
 import { SupabaseService } from './services/supabase.service';
 import { MatSnackBar } from '@angular/material';
 import { environment } from 'src/environments/environment';
@@ -50,13 +50,14 @@ export class AppComponent implements OnInit {
     this.supabase.subscribeLiveScoreUpdate();
     this.supabase.liveScoreUpdate$.pipe(
       filter(score => score !== null && score.id !== this.currentScoreId),
-      tap(score => this.snackBar.open(`${score.user} gættede ${score.score} km forkert! 🎉`, '', {
+      tap(score => this.snackBar.open(`${score.user} gættede ${Math.round(score.score * 10) / 10 } km forkert! 🎉`, '', {
         duration: 4000,
         panelClass: 'snack',
         horizontalPosition: 'end',
         verticalPosition: 'top',
       })
       ),
+      concatMap(() => this.supabase.fetchScoreboard()),
       tap(() => confetti())
     ).subscribe();
 
@@ -167,7 +168,7 @@ export class AppComponent implements OnInit {
 
   handleSummery() {
     this.showSummery = true;
-    this.totalDistance = Math.round(this.distance.reduce((acc, cur) => acc + cur));
+    this.totalDistance = this.distance.reduce((acc, cur) => acc + cur);
     this.supabase.postScore(
       {
         quiz_name: environment.quizName,
